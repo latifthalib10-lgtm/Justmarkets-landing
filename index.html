@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>JustMarkets | Start Trading</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    background:#050b08;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+}
+
+/* NAVBAR */
+
+nav{
+    height:75px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.logo{
+    font-size:21px;
+    font-weight:800;
+    letter-spacing:.5px;
+}
+
+.logo span{
+    color:#19e77b;
+}
+
+.nav-btn{
+    padding:11px 18px;
+    background:#19e77b;
+    color:#041009;
+    border-radius:9px;
+    font-weight:bold;
+}
+
+/* HERO */
+
+.hero{
+    min-height:620px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    position:relative;
+}
+
+.glow{
+    position:absolute;
+    width:400px;
+    height:400px;
+    background:#19e77b;
+    opacity:.08;
+    filter:blur(100px);
+    border-radius:50%;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+}
+
+.badge{
+    display:inline-block;
+    padding:8px 14px;
+    border:1px solid rgba(25,231,123,.3);
+    background:rgba(25,231,123,.07);
+    color:#19e77b;
+    border-radius:30px;
+    font-size:13px;
+    margin-bottom:22px;
+}
+
+.hero h1{
+    font-size:56px;
+    line-height:1.05;
+    max-width:800px;
+    margin:auto;
+}
+
+.hero h1 span{
+    color:#19e77b;
+}
+
+.hero p{
+    max-width:650px;
+    margin:22px auto;
+    color:#9da8a2;
+    line-height:1.7;
+}
+
+.cta{
+    display:inline-block;
+    padding:17px 32px;
+    background:#19e77b;
+    color:#031008;
+    border-radius:11px;
+    font-weight:800;
+    margin-top:12px;
+    box-shadow:0 10px 35px rgba(25,231,123,.15);
+    transition:.2s;
+}
+
+.cta:hover{
+    transform:translateY(-3px);
+}
+
+/* STATS */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    margin-bottom:70px;
+}
+
+.stat{
+    background:#0a1510;
+    border:1px solid #17281f;
+    border-radius:16px;
+    padding:25px;
+    text-align:center;
+}
+
+.stat strong{
+    display:block;
+    font-size:25px;
+    color:#19e77b;
+    margin-bottom:7px;
+}
+
+.stat small{
+    color:#88958e;
+}
+
+/* SECTION */
+
+section{
+    padding:70px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.section-title h2{
+    font-size:34px;
+    margin-bottom:10px;
+}
+
+.section-title p{
+    color:#8e9993;
+}
+
+/* CARDS */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.card{
+    background:#0a1510;
+    border:1px solid #17281f;
+    border-radius:18px;
+    padding:28px;
+}
+
+.icon{
+    font-size:30px;
+    margin-bottom:20px;
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#8e9993;
+    line-height:1.6;
+    font-size:14px;
+}
+
+/* DOWNLOAD */
+
+.download{
+    background:#0a1510;
+    border:1px solid #17281f;
+    border-radius:22px;
+    padding:35px;
+}
+
+.download-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+
+.download-btn{
+    padding:20px;
+    border-radius:12px;
+    background:#101f17;
+    border:1px solid #20382b;
+    transition:.2s;
+}
+
+.download-btn:hover{
+    border-color:#19e77b;
+    transform:translateY(-2px);
+}
+
+.download-btn strong{
+    display:block;
+    margin-bottom:6px;
+}
+
+.download-btn span{
+    color:#77837c;
+    font-size:13px;
+}
+
+/* STEPS */
+
+.steps{
+    max-width:750px;
+    margin:auto;
+}
+
+.step{
+    display:flex;
+    gap:18px;
+    padding:20px 0;
+    border-bottom:1px solid #17231d;
+}
+
+.step:last-child{
+    border-bottom:none;
+}
+
+.number{
+    width:40px;
+    height:40px;
+    min-width:40px;
+    border-radius:50%;
+    background:#19e77b;
+    color:#031008;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+}
+
+.step p{
+    color:#8e9993;
+    margin-top:7px;
+    line-height:1.5;
+}
+
+/* REFERRAL */
+
+.referral{
+    background:linear-gradient(135deg,#0c1e14,#08110c);
+    border:1px solid #1c3929;
+    border-radius:22px;
+    padding:40px;
+    text-align:center;
+}
+
+.referral p{
+    color:#919c96;
+    margin:12px auto 22px;
+    max-width:600px;
+    line-height:1.6;
+}
+
+.link-box{
+    max-width:600px;
+    margin:auto;
+    display:flex;
+    background:#050b08;
+    border:1px solid #20382b;
+    border-radius:11px;
+    overflow:hidden;
+}
+
+.link-box input{
+    flex:1;
+    min-width:0;
+    border:none;
+    outline:none;
+    background:transparent;
+    color:#19e77b;
+    padding:15px;
+    font-size:13px;
+}
+
+.copy{
+    border:none;
+    background:#19e77b;
+    color:#031008;
+    padding:0 20px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* FAQ */
+
+.faq{
+    max-width:750px;
+    margin:auto;
+}
+
+details{
+    background:#0a1510;
+    border:1px solid #17281f;
+    border-radius:12px;
+    padding:20px;
+    margin-bottom:12px;
+}
+
+summary{
+    cursor:pointer;
+    font-weight:bold;
+}
+
+details p{
+    color:#8e9993;
+    line-height:1.6;
+    margin-top:12px;
+}
+
+/* WARNING */
+
+.warning{
+    background:#0b100d;
+    border:1px solid #202821;
+    padding:22px;
+    border-radius:12px;
+    color:#727d76;
+    font-size:12px;
+    line-height:1.7;
+    margin-top:50px;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:35px 0;
+    color:#56625b;
+    font-size:12px;
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+    .hero{
+        min-height:560px;
+    }
+
+    .hero h1{
+        font-size:39px;
+    }
+
+    .stats,
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .download-grid{
+        grid-template-columns:1fr;
+    }
+
+    .link-box{
+        flex-direction:column;
+    }
+
+    .copy{
+        padding:13px;
+    }
+
+    .referral,
+    .download{
+        padding:25px;
+    }
+
+    .nav-btn{
+        padding:9px 13px;
+        font-size:13px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- NAVBAR -->
+
+<nav>
+    <div class="logo">
+        JUST<span>MARKETS</span>
+    </div>
+
+    <a
+        class="nav-btn"
+        href="https://one.justmarkets.link/a/5ft4g0vhon"
+        target="_blank"
+        rel="noopener noreferrer">
+        DAFTAR
+    </a>
+</nav>
+
+
+<!-- HERO -->
+
+<div class="hero">
+
+    <div class="glow"></div>
+
+    <div class="hero-content">
+
+        <div class="badge">
+            OFFICIAL PARTNER REGISTRATION
+        </div>
+
+        <h1>
+            Start Your Trading
+            <span>Journey Today</span>
+        </h1>
+
+        <p>
+            Daftar melalui link partner kami untuk mengakses
+            platform trading JustMarkets. Pilih platform yang
+            sesuai dengan kebutuhan Anda dan mulai trading.
+        </p>
+
+        <a
+            class="cta"
+            href="https://one.justmarkets.link/a/5ft4g0vhon"
+            target="_blank"
+            rel="noopener noreferrer">
+            DAFTAR MELALUI PARTNER →
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- STATS -->
+
+<div class="stats">
+
+    <div class="stat">
+        <strong>MT4</strong>
+        <small>Trading Platform</small>
+    </div>
+
+    <div class="stat">
+        <strong>MT5</strong>
+        <small>Trading Platform</small>
+    </div>
+
+    <div class="stat">
+        <strong>24/7</strong>
+        <small>Market Access</small>
+    </div>
+
+</div>
+
+
+<!-- BENEFITS -->
+
+<section>
+
+<div class="section-title">
+    <h2>Kenapa Memilih Platform Ini?</h2>
+    <p>Gunakan platform yang sesuai dengan kebutuhan trading Anda.</p>
+</div>
+
+<div class="cards">
+
+    <div class="card">
+        <div class="icon">⚡</div>
+        <h3>Fast Execution</h3>
+        <p>
+            Akses platform trading dengan eksekusi order
+            yang dirancang untuk kebutuhan trader.
+        </p>
+    </div>
+
+    <div class="card">
+        <div class="icon">📊</div>
+        <h3>Trading Tools</h3>
+        <p>
+            Gunakan chart, indikator dan berbagai tools
+            untuk membantu analisis pasar.
+        </p>
+    </div>
+
+    <div class="card">
+        <div class="icon">📱</div>
+        <h3>Multi Platform</h3>
+        <p>
+            Trading dapat dilakukan melalui perangkat
+            mobile maupun desktop.
+        </p>
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- DOWNLOAD -->
+
+<section>
+
+<div class="section-title">
+    <h2>Download Trading Platform</h2>
+    <p>
+        Daftar terlebih dahulu melalui link partner agar
+        proses registrasi menggunakan link referral kami.
+    </p>
+</div>
+
+<div class="download">
+
+<div class="download-grid">
+
+    <a
+        class="download-btn"
+        href="https://one.justmarkets.link/a/5ft4g0vhon"
+        target="_blank"
+        rel="noopener noreferrer">
+
+        <strong>🤖 Android</strong>
+        <span>Download / akses melalui partner link</span>
+
+    </a>
+
+
+    <a
+        class="download-btn"
+        href="https://one.justmarkets.link/a/5ft4g0vhon"
+        target="_blank"
+        rel="noopener noreferrer">
+
+        <strong>🍎 iPhone / iPad</strong>
+        <span>Download / akses melalui partner link</span>
+
+    </a>
+
+
+    <a
+        class="download-btn"
+        href="https://one.justmarkets.link/a/5ft4g0vhon"
+        target="_blank"
+        rel="noopener noreferrer">
+
+        <strong>💻 MetaTrader 5</strong>
+        <span>Trading platform</span>
+
+    </a>
+
+
+    <a
+        class="download-btn"
+        href="https://one.justmarkets.link/a/5ft4g0vhon"
+        target="_blank"
+        rel="noopener noreferrer">
+
+        <strong>💻 MetaTrader 4</strong>
+        <span>Trading platform</span>
+
+    </a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- HOW TO -->
+
+<section>
+
+<div class="section-title">
+    <h2>Cara Mulai</h2>
+    <p>Hanya beberapa langkah untuk memulai.</p>
+</div>
+
+<div class="steps">
+
+    <div class="step">
+
+        <div class="number">1</div>
+
+        <div>
+            <h3>Klik Daftar</h3>
+            <p>
+                Gunakan tombol daftar pada website ini
+                untuk membuka halaman partner.
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="step">
+
+        <div class="number">2</div>
+
+        <div>
+            <h3>Buat Akun</h3>
+            <p>
+                Ikuti proses registrasi yang tersedia
+                pada halaman broker.
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="step">
+
+        <div class="number">3</div>
+
+        <div>
+            <h3>Download Platform</h3>
+            <p>
+                Pilih aplikasi atau platform trading
+                yang ingin digunakan.
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="step">
+
+        <div class="number">4</div>
+
+        <div>
+            <h3>Mulai Trading</h3>
+            <p>
+                Setelah akun aktif, login dan gunakan
+                platform sesuai kebutuhan Anda.
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- REFERRAL -->
+
+<section>
+
+<div class="referral">
+
+    <h2>🔗 Partner Registration Link</h2>
+
+    <p>
+        Gunakan link berikut untuk melakukan registrasi
+        melalui partner kami.
+    </p>
+
+    <div class="link-box">
+
+        <input
+            id="referralLink"
+            value="https://one.justmarkets.link/a/5ft4g0vhon"
+            readonly>
+
+        <button
+            class="copy"
+            onclick="copyLink()">
+            COPY
+        </button>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- FAQ -->
+
+<section>
+
+<div class="section-title">
+    <h2>FAQ</h2>
+</div>
+
+<div class="faq">
+
+    <details>
+        <summary>Apakah saya harus mendaftar melalui link ini?</summary>
+        <p>
+            Jika Anda ingin registrasi melalui partner kami,
+            gunakan link yang tersedia di website ini.
+        </p>
+    </details>
+
+
+    <details>
+        <summary>Apakah saya bisa menggunakan HP?</summary>
+        <p>
+            Ya. Website ini dirancang agar dapat digunakan
+            melalui smartphone maupun komputer.
+        </p>
+    </details>
+
+
+    <details>
+        <summary>Platform apa yang tersedia?</summary>
+        <p>
+            Platform yang tersedia dapat mencakup aplikasi
+            mobile serta MetaTrader 4 dan MetaTrader 5,
+            tergantung ketersediaan dari broker.
+        </p>
+    </details>
+
+
+    <details>
+        <summary>Apakah trading memiliki risiko?</summary>
+        <p>
+            Ya. Forex dan CFD memiliki risiko tinggi.
+            Jangan menggunakan dana yang tidak sanggup
+            Anda tanggung jika mengalami kerugian.
+        </p>
+    </details>
+
+</div>
+
+</section>
+
+
+<!-- WARNING -->
+
+<div class="warning">
+
+<strong>RISK WARNING</strong><br><br>
+
+Trading Forex dan CFD memiliki tingkat risiko tinggi
+dan dapat menyebabkan kehilangan sebagian atau seluruh
+modal yang diinvestasikan. Pastikan Anda memahami risiko
+produk yang diperdagangkan sebelum mengambil keputusan.
+
+Website ini merupakan halaman informasi/partner dan
+bukan merupakan situs resmi JustMarkets. Pastikan selalu
+memeriksa informasi dan ketentuan terbaru langsung dari
+penyedia layanan sebelum melakukan pendaftaran.
+
+</div>
+
+
+<footer>
+    © 2026 Trading Partner • All Rights Reserved
+</footer>
+
+</div>
+
+
+<script>
+
+function copyLink(){
+
+    const link =
+    "https://one.justmarkets.link/a/5ft4g0vhon";
+
+    navigator.clipboard.writeText(link);
+
+    const button =
+    document.querySelector(".copy");
+
+    button.innerText = "COPIED ✓";
+
+    setTimeout(function(){
+
+        button.innerText = "COPY";
+
+    },2000);
+
+}
+
+</script>
+
+</body>
+  </html>
